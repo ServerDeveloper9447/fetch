@@ -17,6 +17,7 @@ app.get('/', async (req, res) => {
   } catch(err) {
     res.send({error:"The URL doesn't provide a valid JSON response or is protecting itself from getting requests from automated clients."})
   }
+  }
 })
 
 app.listen(process.env.PORT, () => {
