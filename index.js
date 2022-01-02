@@ -3,7 +3,7 @@ const app = require('express')()
 app.set('json_spaces', 1)
 app.use(require('cors')())
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   if (!req.query.url) {
     res.send({'error':"No url provided"})
   } else {
