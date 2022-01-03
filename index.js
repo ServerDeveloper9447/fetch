@@ -15,9 +15,7 @@ app.get('/', async (req, res) => {
   res.send([json, {"status":st,lag:Math.floor(Date.now() - time)}])
     } catch (err) {
       var time1 = Date.now()
-      const f1 = await fetch(req.query.url)
-      const st1 = await f1.status
-      res.send([{error:"The URL doesn't provide a valid JSON response or is protecting itself from getting requests from automated clients."}, {"status":st1,lag:Math.floor(Date.now() - time1)}])
+      res.send([{error:"The URL doesn't provide a valid JSON response or is protecting itself from getting requests from automated clients."}, {"status":"unknown",lag:Math.floor(Date.now() - time1)}])
     }
   }
 })
