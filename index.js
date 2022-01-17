@@ -10,10 +10,9 @@ app.get('/', async (req, res) => {
     try {
       var time = Date.now()
   const f = await fetch(req.query.url)
-  const h = await f.headers
   const st = await f.status
   const json = await f.json()
-  res.send([json, {"status":st,lag:Math.floor(Date.now() - time)}, h])
+  res.send([json, {"status":st,lag:Math.floor(Date.now() - time)}])
     } catch (err) {
       try {
       var time1 = Date.now()
